@@ -17,7 +17,9 @@ class App extends Component{
     player2: null,
     player3: null,
     load: false,
-    
+    tribruxo: false,
+    discovery: false,
+    initscreen: false,
   }
 
   getCharacters = () => {
@@ -131,7 +133,7 @@ class App extends Component{
 
         {characters[player1] ? <ModalCard character={characters[player1]}  characters={characters} player={player1}/> : null}
         
-        {
+        {/* {
           !load ? 
             <Button handle={this.handleClick}>
               {
@@ -139,7 +141,7 @@ class App extends Component{
                   'Tentar Novamente' : 'Começar!'
               }
             </Button> : null
-        }
+        } */}
 
       
     </div>

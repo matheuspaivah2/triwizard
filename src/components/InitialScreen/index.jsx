@@ -1,13 +1,16 @@
 import { Component } from "react";
 import './styles.css'
+import Wand from '../../assets/wand.png'
+import { Container } from './styles'
 
 class InitialScreen extends Component{
     render(){
         return(
-            <section className="welcome">
-                <h1>Torneio Tribruxo</h1>
-                <h3>Clique no botão para encontrar os feiticeiros!</h3>
-            </section>
+            <Container >
+                <h1>WELCOME!</h1>
+                <h3>Explore o mundo magico e encontre os finalistas do torneio tribruxo.</h3>
+                <img src={Wand} alt="Wand" />
+            </Container>
         )
     }
 }
