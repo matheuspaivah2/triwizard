@@ -1,0 +1,26 @@
+.wand{
+    width: 300px;
+    height: 300px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .wand {
+      animation: wand-spin infinite 5s linear;
+    }
+  }
+  
+  
+  
+  @keyframes wand-spin {
+    from {
+      transform: rotate(0deg);
+      
+    }
+    to {
+      transform: rotate(360deg);
+      
+    }
+  }
+
+
+ 
