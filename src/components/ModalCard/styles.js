@@ -114,13 +114,6 @@ export const ImgCard = styled.img`
     width: 350px;
     height: 440px;
     padding: 20px;
-    /* border-color: ${(props) => {
-
-        const { characters, player } = props;
-
-        return getBorderColor(player, characters)
-        
-    }}; */
     z-index:1;
     
 `
