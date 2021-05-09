@@ -2,12 +2,13 @@ import { Component } from "react";
 import { Nav, Disc } from './styles'
 import Card from '../Card'
 import Loading from '../Loading'
+import ModalCard from '../ModalCard'
 
 class Discovery extends Component{
 
     state ={
         characters: [],
-        gameIsStarted: false,
+        character: '',
         type: 'students',
         house: '',
         load: true,
@@ -58,10 +59,15 @@ class Discovery extends Component{
         this.setState({house: `${house}`})
       }
 
+      getCharacter = (char) => {
+        this.setState({
+          character: char,
+        })
+      }
 
     render(){
 
-      const { characters, load, house, type } = this.state;
+      const { characters, load, house, type, character } = this.state;
         return(
             <Disc>
               <div className='container'>
@@ -77,9 +83,9 @@ class Discovery extends Component{
                   <div className='renderList'>
                       <h3>
                         {
-                          house ? house
+                          house ? characters[0].house
                           :
-                          type
+                          type[0].toUpperCase() + type.slice(1)
                         }
                       </h3>
                       <div className='list'>
@@ -88,14 +94,17 @@ class Discovery extends Component{
                         }
                           {
                             !load &&
-                            characters.map((char, index) => <Card key={index} character={char}  characters={characters} player={index}/>)
+                            characters.map((char, index) => <Card handle={this.getCharacter} key={index} character={char}  characters={characters} player={index}/>)
                           }
                           
-                        
+                          
                       </div>
                   </div>
               </div>
-                
+
+                {
+                  character !== '' ? < ModalCard handle={this.getCharacter} character={character} /> : null
+                }
             </Disc>
             
         )

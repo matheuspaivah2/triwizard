@@ -35,7 +35,7 @@ const getBorderColor = (player, characters) =>{
 export const Container = styled.div`
     display: flex;
     width: 13%;
-    height: 45%;
+    height: 47%;
 
     
     background-color: black;
@@ -56,13 +56,41 @@ export const ContainerCard = styled.div`
     justify-content: center;
     align-items: center;
     row-gap: 5px;
+    background-color: black;
     border: 2px solid white;
     border-radius: 8px;
-    
+    cursor:pointer;
     width:100%;
     height: 100%;
     
-   
+    animation: ani 2s ease 0s 1 backwards;
+        @keyframes ani {
+            0% {
+                
+                opacity: 0%;
+                
+            }
+            
+
+            100% {
+                opacity: 100%;
+            }
+    
+    }
+
+   &:hover{
+    animation: neon 1s ease normal 1 backwards;
+        @keyframes neon {
+            from {
+                transform: scale(1);
+                filter: drop-shadow(0 0 0 red);
+            }
+            to {
+                transform: scale(1.15);
+                filter: drop-shadow(0 0 5px white);
+            }
+        }
+   }
 
 
 `

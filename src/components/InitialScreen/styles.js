@@ -23,10 +23,10 @@ export const Container = styled.section`
         animation: neon 3s alternate infinite;
         @keyframes neon {
         from {
-            filter: drop-shadow(0 0 0 red);
+            filter: drop-shadow(0 0 0 blue);
         }
         to {
-            filter: drop-shadow(0 0 30px red);
+            filter: drop-shadow(0 0 30px blue);
         }
     
     }

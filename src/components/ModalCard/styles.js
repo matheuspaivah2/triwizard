@@ -4,12 +4,12 @@ import Moldura from '../../assets/molduraBlack.png'
 
 
 
-const getBorderColor = (player, characters) =>{
+const getBorderColor = (character) =>{
     
 
     let output = ''
 
-    switch (characters[player].house){
+    switch (character.house){
         case 'Gryffindor':
             output = 'brown';
         break;
@@ -45,7 +45,7 @@ export const Container = styled.div`
     width:390px;
     height: 800px;
     
-    background-color: #000000c7;
+    background-color: #00000000;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -61,7 +61,7 @@ export const ContainerCard = styled.div`
     row-gap: 5px;
     border: 2px solid white;
     border-radius: 8px;
-    
+    background-color: black;
     width: 360px;
     height: 660px;
     
@@ -139,9 +139,9 @@ export const HouseName = styled.h4`
     margin-right: 32%;
     color: ${(props) => {
 
-        const { characters, player } = props;
+        const { character } = props;
 
-        return getBorderColor(player, characters)
+        return getBorderColor(character)
         
     }};
 `
@@ -151,11 +151,11 @@ export const Ances = styled.h5`
    
     color: ${(props) => {
 
-        const { characters, player } = props;
+        const { character } = props;
 
-        return getBorderColor(player, characters)
+        return getBorderColor(character)
 
-        }};
+    }};
     
 `
 
@@ -166,14 +166,35 @@ export const Back = styled.button`
     color: black;
     background-color: ${(props) => {
 
-const { characters, player } = props;
+        const { character } = props;
 
-return getBorderColor(player, characters)
+        return getBorderColor(character)
 
-}};
+    }};
 
     &:hover{
         border: 2px solid white;
     }
 
+    animation: a 2.5s ease 0s 1 backwards;
+    @keyframes a {
+        0% {
+            
+            transform: scale(0.1);
+           
+            
+        }
+        50% { 
+            
+            
+            
+            
+        }
+
+        100% {
+            transform: scale(1);
+            
+        }
+
+};
 `

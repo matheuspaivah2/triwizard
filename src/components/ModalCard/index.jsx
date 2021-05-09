@@ -33,7 +33,7 @@ class ModalCard extends Component{
     }
     render(){
 
-        const { character, player, characters } = this.props;
+        const { character, player, characters, handle } = this.props;
 
         const logoHouse = this.getLogoHouse(character)
 
@@ -43,7 +43,7 @@ class ModalCard extends Component{
                     <ContainerCard>
                         <HeaderCrad>
                             <Logo src={logoHouse} characters={characters} player={player}/>
-                            <HouseName characters={characters} player={player}> {character.house}</HouseName>
+                            <HouseName character={character} player={player}> {character.house}</HouseName>
                         </HeaderCrad>
                         
                         <FigCard>
@@ -54,7 +54,7 @@ class ModalCard extends Component{
                         <h4>{character.name}</h4>
 
                         
-                        <Ances characters={characters} player={player}>
+                        <Ances character={character} player={player}>
                             {character.ancestry ? character.ancestry : 'unknow'}
                         </Ances>
                         
@@ -62,7 +62,7 @@ class ModalCard extends Component{
                         <h5>{character.alive ? 'Live' : 'Dead'}</h5>
                     </ContainerCard>
 
-                    <Back  characters={characters} player={player}>Back</Back>
+                    <Back onClick={() =>handle('')} character={character} player={player}>Back</Back>
                 </Container>
                
             </BlackBackground>

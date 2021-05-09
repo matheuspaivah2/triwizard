@@ -26,7 +26,7 @@ class Card extends Component{
                 output = Slytherin;
             break;
             default:
-                output = Gryffindor;
+                output = null;
             
         }
     
@@ -36,15 +36,20 @@ class Card extends Component{
     render(){
         
 
-        const { character, player, characters } = this.props;
+        const { character, player, characters, handle } = this.props;
         const logoHouse = this.getLogoHouse(character)
 
         return(
-            <Container>
-                    <ContainerCard>
+            <Container  onClick={() => handle(character)} >
+                    <ContainerCard >
                         <HeaderCard>
                             {logoHouse && <Logo src={logoHouse} characters={characters} player={player}/>}
-                            <HouseName characters={characters} player={player}> {character.house}</HouseName>
+                            {
+                                character.house ? <HouseName characters={characters} player={player}> {character.house}</HouseName>
+                                :
+                                <h6 style={{textAlign: 'center',marginLeft: `${32}%`}}>Unknown</h6>
+                            }
+                            
                         </HeaderCard>
                         
                         <FigCard>
@@ -53,14 +58,9 @@ class Card extends Component{
                         </FigCard>
                         
                         <h5>{character.name}</h5>
-
                         
-                        {/* <Ances characters={characters} player={player}>
-                            {character.ancestry ? character.ancestry : 'unknow'}
-                        </Ances> */}
                         
-{/*                         
-                        <h6>{character.alive ? 'Live' : 'Dead'}</h6> */}
+                        
                     </ContainerCard>
 
                     

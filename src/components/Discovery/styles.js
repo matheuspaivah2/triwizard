@@ -26,12 +26,21 @@ export const Disc = styled.section`
         border-left: 2px solid white;
         display: flex;
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
         flex-direction: column;
         margin-top: 12px;
+
+
+        h3{
+            margin-top: -15px;
+            margin-bottom: 20px;
+            margin-right: auto;
+            margin-left: 80px;
+        }
     }
 
     .list{
+        opacity: 100%;
         display: flex;
         column-gap: 30px;
         justify-content: center;
@@ -39,7 +48,10 @@ export const Disc = styled.section`
         flex-wrap: wrap;
         width: 100%;
         height: 90%;
-    }
+
+        
+       
+}
 `
 export const Nav = styled.nav`
     display: flex;
