@@ -62,10 +62,6 @@ export const Nav = styled.nav`
 
 
 
-    /* button{
-        width: 180px;
-    } */
-
     .bt{
         margin: 0;
         background-size: cover;

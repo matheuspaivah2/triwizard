@@ -81,6 +81,8 @@ class Discovery extends Component{
                   </Nav>
 
                   <div className='renderList'>
+                    {
+                      !load &&
                       <h3>
                         {
                           house ? characters[0].house
@@ -88,6 +90,8 @@ class Discovery extends Component{
                           type[0].toUpperCase() + type.slice(1)
                         }
                       </h3>
+                    }
+                      
                       <div className='list'>
                         {
                           load && <Loading/>
