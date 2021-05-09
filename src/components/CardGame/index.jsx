@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { ContainerCard, HouseName, ImgCard, ContainerStyled, FigCard, Mold, Logo, HeaderCard, Ances } from './styles'
-import Slytherin from '../../assets/Slytherin.png'
+import Slytherin from '../../assets/Slytherin2.png'
 import Hufflepuff from '../../assets/Hufflepuff.png'
 import Ravenclaw from '../../assets/Ravenclaw.png'
 import Gryffindor from '../../assets/Gryffindor.png'
@@ -40,7 +40,7 @@ class CardGame extends Component{
         return(
            
                 <ContainerStyled>
-                    <ContainerCard>
+                    <ContainerCard className='test'>
                         <HeaderCard>
                             <Logo src={logoHouse} characters={characters} player={player}/>
                             <HouseName character={character} player={player}> {character.house}</HouseName>

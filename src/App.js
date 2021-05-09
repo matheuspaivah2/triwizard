@@ -3,7 +3,6 @@ import { Component } from 'react';
 import './styles/App.css';
 
 import InititalScreen from './components/InitialScreen'
-import Loading from './components/Loading'
 import Header from './components/Header'
 import TribruxoScreen from './components/TribruxoScreen'
 import Discovery from './components/Discovery'
@@ -113,17 +112,19 @@ class App extends Component{
   }
 
   setModal = (screen) =>{
-    const { tribruxo, discovery, initscreen } = this.state;
     
       switch(`${screen}`){
         case 'tribruxo':
-          this.setState({tribruxo: !tribruxo});
+          this.setState({tribruxo: true});
           break;
         case 'discovery':
-          this.setState({discovery: !discovery});
+          this.setState({
+            discovery: true,
+            gameIsStarted: false,
+          });
           break;  
         case 'initscreen':
-          this.setState({initscreen: !initscreen});
+          this.setState({initscreen: true});
           break;
         
           default:
@@ -132,7 +133,6 @@ class App extends Component{
   }
 
   changeModal = (screen) =>{
-
     
     this.setState({
     tribruxo: false,
@@ -161,25 +161,9 @@ class App extends Component{
        
         {
           tribruxo ?
-            <TribruxoScreen tribruxo={tribruxo} handle={this.changeModal} handleClick={this.handleClick} 
+            <TribruxoScreen tribruxo={tribruxo} handle={this.changeModal} handleClick={this.handleClick} load={load}
              characters={characters} player1={player1} player2={player2} player3={player3} started={gameIsStarted}/> : null
         }
-        {/* {
-          !load ? <CardList characters={characters}  player1={player1}  player2={player2} player3={player3} /> 
-            : <Loading />
-        } */}
-
-        {/* {characters[4] ? <ModalCard character={characters[4]}  characters={characters} player={4}/> : null} */}
-        
-        {/* {
-          !load ? 
-            <Button handle={this.handleClick}>
-              {
-                gameIsStarted ? 
-                  'Tentar Novamente' : 'Começar!'
-              }
-            </Button> : null
-        } */}
 
         {
           discovery &&
@@ -187,9 +171,6 @@ class App extends Component{
             
         }
       
-        {
-
-        }
     </div>
   );
 }

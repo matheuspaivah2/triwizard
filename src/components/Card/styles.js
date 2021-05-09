@@ -36,15 +36,11 @@ export const Container = styled.div`
     display: flex;
     width: 13%;
     height: 47%;
-
-    
     background-color: black;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /* margin: 100px auto; */
-
     h5{
         font-size: 1.5rem;
     }
@@ -78,19 +74,11 @@ export const ContainerCard = styled.div`
     
     }
 
-   &:hover{
-    animation: neon 1s ease normal 1 backwards;
-        @keyframes neon {
-            from {
-                transform: scale(1);
-                filter: drop-shadow(0 0 0 red);
-            }
-            to {
-                transform: scale(1.1);
-                filter: drop-shadow(0 0 5px white);
-            }
-        }
-   }
+    &:hover{
+        transition-duration: 1s;
+        transform: scale(1.1);
+       
+    }
 
 
 `
@@ -98,8 +86,6 @@ export const ContainerCard = styled.div`
 export const FigCard = styled.div`
     width:95%;
     height: 72%;
-    /* background-image: url(${Moldura}); */
-    /* background-color: black; */
     z-index:1;
     position:relative;
     

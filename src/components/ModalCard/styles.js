@@ -23,7 +23,7 @@ const getBorderColor = (character) =>{
             output = 'rgb(126 240 95)';
         break;
         default:
-            output = 'black';
+            output = 'brown';
         
     }
 
@@ -92,7 +92,6 @@ export const ContainerCard = styled.div`
 export const FigCard = styled.div`
     width: 350px;
     height: 440px;
-    /* background-image: url(${Moldura}); */
     background-color: black;
     z-index:1;
     position:relative;
@@ -125,6 +124,10 @@ export const HeaderCrad = styled.div`
     
     align-items:center;
     width: 360px;
+
+    h6{
+        margin-left: 40%;
+    }
 `
 
 export const Logo = styled.img`

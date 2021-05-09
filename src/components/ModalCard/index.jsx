@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { BlackBackground, ContainerCard, HouseName, ImgCard, Container, FigCard, Mold, Logo, HeaderCrad, Ances, Back } from './styles'
-import Slytherin from '../../assets/Slytherin.png'
+import Slytherin from '../../assets/Slytherin2.png'
 import Hufflepuff from '../../assets/Hufflepuff.png'
 import Ravenclaw from '../../assets/Ravenclaw.png'
 import Gryffindor from '../../assets/Gryffindor.png'
@@ -25,7 +25,7 @@ class ModalCard extends Component{
                 output = Slytherin;
             break;
             default:
-                output = Gryffindor;
+                
             
         }
     
@@ -42,8 +42,13 @@ class ModalCard extends Component{
                 <Container>
                     <ContainerCard>
                         <HeaderCrad>
-                            <Logo src={logoHouse} characters={characters} player={player}/>
-                            <HouseName character={character} player={player}> {character.house}</HouseName>
+                            {
+                                character.house && <Logo src={logoHouse} characters={characters} player={player}/>
+                            }
+                            {
+                                character.house ? <HouseName character={character} player={player}> {character.house}</HouseName> : <h6>Unknown</h6>
+                            }
+                            
                         </HeaderCrad>
                         
                         <FigCard>

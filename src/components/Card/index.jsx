@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Slytherin from '../../assets/Slytherin.png'
+import Slytherin from '../../assets/Slytherin2.png'
 import Hufflepuff from '../../assets/Hufflepuff.png'
 import Ravenclaw from '../../assets/Ravenclaw.png'
 import Gryffindor from '../../assets/Gryffindor.png'

@@ -8,14 +8,10 @@
 .App {
   text-align: center;
   background-color: #0E0E0E;
-  background-image: url('../assets/logoHp.png');
-  background-position: 190% 250%;
+  background-image: url('../assets/hogwarts.png');
+  background-position: 0% -70%;
   background-repeat: no-repeat;
   min-height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }

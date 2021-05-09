@@ -21,7 +21,8 @@ export const ButtonMenu = styled.button`
     border-radius: 8px;
     width: 245px;
     height: 45px;
-    background-color: #12293e;
+    background-color: #00101e;
+        border: 2px solid white;
     font-size: 1.8rem;
     color: #ebebeb;
     margin-top: 10px;
@@ -30,7 +31,7 @@ export const ButtonMenu = styled.button`
     cursor: pointer;
 
     &:hover{
-        border: 2px solid white;
+        border: 4px solid white;
     }
 `
 

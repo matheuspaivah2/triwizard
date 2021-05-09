@@ -78,13 +78,28 @@ export const Nav = styled.nav`
 
         &:hover{
         transform: scale(1.2);
-        animation: neon 1s alternate infinite;
-        @keyframes neon {
+        animation: ne 1s alternate infinite;
+        @keyframes ne {
         from {
             filter: drop-shadow(0 0 0 white);
         }
         to {
-            filter: drop-shadow(0 0 30px white);
+            filter: drop-shadow(0 0 20px white);
+        }
+    }
+    }
+
+        &:focus{
+        
+        animation: foc 1s alternate infinite;
+        @keyframes foc {
+        from {
+            filter: drop-shadow(0 0 0 white);
+            transform: scale(1);
+        }
+        to {
+            filter: drop-shadow(0 0 50px white);
+            transform: scale(1.2);
         }
     }
     }

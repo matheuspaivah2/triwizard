@@ -1,39 +1,46 @@
 import { Component } from "react";
 import { Container } from './styles'
 import Group from '../../assets/bandeiras.png'
-
+import Loading from '../Loading'
 import CardList from "../CardList";
 
 class TribruxoScreen extends Component{
     render(){
 
-        const { player1, player2, player3, characters, started, handleClick} = this.props;
+        const { player1, player2, player3, characters, started, handleClick, load} = this.props;
         return(
             <Container>
                 {
-                    !started ?
+                    !started &&
                     <div>
-                        <h1>Torneio Tribruxo</h1>
-                        <h2>Veja os finalistas do torneio Tribruxo</h2>
+                        <h1>Triwizard Tournament</h1>
+                        <h2>See the finalists of triwizard tournament</h2>
                         <img className='flags' src={Group} alt="" />
-                        <h3>Clique no botão para encontrar os feiticeiros!</h3>
+                        <h3>Push the button to find the wizards!</h3>
                     </div>  
-                    :
+                }    
+                {
+                    started && !load ?       
                     <CardList characters={characters} player1={player1}
                         player2={player2} player3={player3}>
                         
                     </CardList>
+                    :
+                    null
                 }              
+                {
+                    load ?
+                        <Loading className='load'/>
+                        :
+                            <button onClick={handleClick}>
+                            {
+                                started ? 'Try Again' : 'Find'
+                            }
+                            </button>
+                }
                 
-                <button onClick={handleClick}>
-                    {
-                        started ? 'Try Again' : 'Find'
-                    }
-                </button>
-                {/* {
-                    tribruxo &&
-                    <ModalCard character={characters[player]}  characters={characters} player={player} />
-                } */}
+               
+               
             </Container>
         )
     }

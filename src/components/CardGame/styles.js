@@ -58,13 +58,30 @@ export const ContainerCard = styled.div`
     width: 360px;
     height: 640px;
     
+    animation: ani 2s ease 0s 1 backwards;
+        @keyframes ani {
+            0% {
+                
+                opacity: 0%;
+                
+            }
+            
+
+            100% {
+                opacity: 100%;
+                
+            }
+    
+    }
+
+  
+    
    
 `
 
 export const FigCard = styled.div`
     width: 350px;
     height: 440px;
-    /* background-image: url(${Moldura}); */
     background-color: black;
     z-index:1;
     position:relative;
