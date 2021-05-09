@@ -12,7 +12,7 @@ export const Container = styled.section`
         margin-top: 60px;
     
     }
-    img{
+    .flags{
         width: 600px;
         height: 400px;
         margin-top: 20px;

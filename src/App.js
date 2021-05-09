@@ -1,14 +1,11 @@
 import { Component } from 'react';
 
 import './styles/App.css';
-import Button from './components/Button'
-import CardList from './components/CardsList'
+
 import InititalScreen from './components/InitialScreen'
 import Loading from './components/Loading'
-import ModalCard from './components/ModalCard'
 import Header from './components/Header'
 import TribruxoScreen from './components/TribruxoScreen'
-import { ThemeProvider } from 'styled-components';
 import Discovery from './components/Discovery'
 
 class App extends Component{
@@ -40,9 +37,13 @@ class App extends Component{
   }
 
   handleClick = () =>{
-
-    this.setState({load: true})
-    this.setState({gameIsStarted: true})
+    
+    this.setState({
+      load: true,
+      tribruxo: true,
+      gameIsStarted: true,
+    })
+    
 
     fetch(this.getCharacter('player1'))
     .then(() => this.getCharacter('player2'))
@@ -160,7 +161,8 @@ class App extends Component{
        
         {
           tribruxo ?
-            <TribruxoScreen tribruxo={tribruxo} handle={this.changeModal} character={characters[player1]}  characters={characters} player={player1}/> : null
+            <TribruxoScreen tribruxo={tribruxo} handle={this.changeModal} handleClick={this.handleClick} 
+             characters={characters} player1={player1} player2={player2} player3={player3} started={gameIsStarted}/> : null
         }
         {/* {
           !load ? <CardList characters={characters}  player1={player1}  player2={player2} player3={player3} /> 
@@ -185,6 +187,9 @@ class App extends Component{
             
         }
       
+        {
+
+        }
     </div>
   );
 }

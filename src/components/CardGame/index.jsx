@@ -1,12 +1,11 @@
 import { Component } from "react";
+import { ContainerCard, HouseName, ImgCard, ContainerStyled, FigCard, Mold, Logo, HeaderCard, Ances } from './styles'
 import Slytherin from '../../assets/Slytherin.png'
 import Hufflepuff from '../../assets/Hufflepuff.png'
 import Ravenclaw from '../../assets/Ravenclaw.png'
 import Gryffindor from '../../assets/Gryffindor.png'
-import { ContainerCard, Container, HeaderCard, Logo, FigCard, Mold, ImgCard, HouseName } from './styles.js'
 
-
-class Card extends Component{
+class CardGame extends Component{
 
     getLogoHouse = (character) =>{
     
@@ -26,30 +25,25 @@ class Card extends Component{
                 output = Slytherin;
             break;
             default:
-                output = null;
+                output = Gryffindor;
             
         }
     
         return output
     }
-   
     render(){
-        
 
-        const { character, player, characters, handle } = this.props;
+        const { character, player, characters } = this.props;
+
         const logoHouse = this.getLogoHouse(character)
 
         return(
-            <Container  onClick={() => handle(character)} >
-                    <ContainerCard >
+           
+                <ContainerStyled>
+                    <ContainerCard>
                         <HeaderCard>
-                            {logoHouse && <Logo src={logoHouse} characters={characters} player={player}/>}
-                            {
-                                character.house ? <HouseName characters={characters} player={player}> {character.house}</HouseName>
-                                :
-                                <h6 style={{textAlign: 'center',marginLeft: `${32}%`}}>Unknown</h6>
-                            }
-                            
+                            <Logo src={logoHouse} characters={characters} player={player}/>
+                            <HouseName character={character} player={player}> {character.house}</HouseName>
                         </HeaderCard>
                         
                         <FigCard>
@@ -57,16 +51,23 @@ class Card extends Component{
                             <Mold></Mold>
                         </FigCard>
                         
-                        <h5>{character.name}</h5>
+                        <h4>{character.name}</h4>
+
+                        
+                        <Ances character={character} player={player}>
+                            {character.ancestry ? character.ancestry : 'unknow'}
+                        </Ances>
                         
                         
-                        
+                        <h5>{character.alive ? 'Live' : 'Dead'}</h5>
                     </ContainerCard>
 
                     
-                </Container>
+                </ContainerStyled>
+               
+            
         )
     }
 }
 
-export default Card;
+export default CardGame;

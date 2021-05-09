@@ -86,7 +86,7 @@ export const ContainerCard = styled.div`
                 filter: drop-shadow(0 0 0 red);
             }
             to {
-                transform: scale(1.15);
+                transform: scale(1.1);
                 filter: drop-shadow(0 0 5px white);
             }
         }
