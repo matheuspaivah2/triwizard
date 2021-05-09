@@ -5,13 +5,13 @@ export const Container = styled.section`
 
     h3{
     margin-top: 30px;
-    animation: neon 2.5s ease 0s infinite backwards;
+    animation: neon 3s alternate infinite;
     @keyframes neon {
     from {
-        filter: drop-shadow(0 0 0 purple);
+        filter: drop-shadow(0 0 0 red);
     }
     to {
-        filter: drop-shadow(0 0 30px purple);
+        filter: drop-shadow(0 0 30px red);
     }
 }
 
@@ -20,13 +20,13 @@ export const Container = styled.section`
 
     h1{
         margin-top: 100px;
-        animation: neon 2.5s ease 0s infinite backwards;
+        animation: neon 3s alternate infinite;
         @keyframes neon {
         from {
-            filter: drop-shadow(0 0 0 purple);
+            filter: drop-shadow(0 0 0 red);
         }
         to {
-            filter: drop-shadow(0 0 30px purple);
+            filter: drop-shadow(0 0 30px red);
         }
     
     }
@@ -61,4 +61,5 @@ export const Container = styled.section`
             transform: rotate3d(0);
         }
     }
+}
 `

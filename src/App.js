@@ -7,6 +7,9 @@ import InititalScreen from './components/InitialScreen'
 import Loading from './components/Loading'
 import ModalCard from './components/ModalCard'
 import Header from './components/Header'
+import TribruxoScreen from './components/TribruxoScreen'
+import { ThemeProvider } from 'styled-components';
+import Discovery from './components/Discovery'
 
 class App extends Component{
 
@@ -19,7 +22,7 @@ class App extends Component{
     load: false,
     tribruxo: false,
     discovery: false,
-    initscreen: false,
+    initscreen: true,
   }
 
   getCharacters = () => {
@@ -101,9 +104,6 @@ class App extends Component{
 
   }
 
- 
-
-
 
   getRandomInt =(min, max) => {
     min = Math.ceil(min);
@@ -111,27 +111,63 @@ class App extends Component{
     return Math.floor(Math.random() * (max - min) + min); 
   }
 
+  setModal = (screen) =>{
+    const { tribruxo, discovery, initscreen } = this.state;
+    
+      switch(`${screen}`){
+        case 'tribruxo':
+          this.setState({tribruxo: !tribruxo});
+          break;
+        case 'discovery':
+          this.setState({discovery: !discovery});
+          break;  
+        case 'initscreen':
+          this.setState({initscreen: !initscreen});
+          break;
+        
+          default:
+      }
+    
+  }
+
+  changeModal = (screen) =>{
+
+    
+    this.setState({
+    tribruxo: false,
+    discovery: false,
+    initscreen: false,
+    })
+
+    this.setModal(screen)
+    
+    
+  }
+
   render(){
 
-    const { characters, gameIsStarted, player1, player2, player3, load } = this.state;
+    const { characters, gameIsStarted, player1, player2, player3, load, tribruxo, initscreen, discovery } = this.state;
     
     return (
       <div className="App">
       
-        <Header/>
+        <Header handle={this.changeModal}/>
 
         {
-        !gameIsStarted &&
-          <InititalScreen />
+          initscreen ?
+          <InititalScreen /> : null
         }
-        
-
+       
+        {
+          tribruxo ?
+            <TribruxoScreen tribruxo={tribruxo} handle={this.changeModal} character={characters[player1]}  characters={characters} player={player1}/> : null
+        }
         {/* {
           !load ? <CardList characters={characters}  player1={player1}  player2={player2} player3={player3} /> 
             : <Loading />
         } */}
 
-        {characters[player1] ? <ModalCard character={characters[player1]}  characters={characters} player={player1}/> : null}
+        {/* {characters[4] ? <ModalCard character={characters[4]}  characters={characters} player={4}/> : null} */}
         
         {/* {
           !load ? 
@@ -143,6 +179,11 @@ class App extends Component{
             </Button> : null
         } */}
 
+        {
+          discovery &&
+            <Discovery />
+            
+        }
       
     </div>
   );

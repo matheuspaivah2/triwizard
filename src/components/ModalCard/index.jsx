@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { BlackBackground, ContainerCard, ImgCard, HouseName, Container, FigCard, Mold, Logo, HeaderCrad, Ances, Back } from './styles'
+import { BlackBackground, ContainerCard, HouseName, ImgCard, Container, FigCard, Mold, Logo, HeaderCrad, Ances, Back } from './styles'
 import Slytherin from '../../assets/Slytherin.png'
 import Hufflepuff from '../../assets/Hufflepuff.png'
 import Ravenclaw from '../../assets/Ravenclaw.png'

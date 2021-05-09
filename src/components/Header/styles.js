@@ -16,3 +16,21 @@ export const NavMenu = styled.nav`
     
 `
 
+export const ButtonMenu = styled.button`
+    border: none;
+    border-radius: 8px;
+    width: 245px;
+    height: 45px;
+    background-color: #12293e;
+    font-size: 1.8rem;
+    color: #ebebeb;
+    margin-top: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover{
+        border: 2px solid white;
+    }
+`
+

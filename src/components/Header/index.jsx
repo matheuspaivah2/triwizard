@@ -1,16 +1,22 @@
 import { Component } from "react";
 import Logo from '../../assets/hplogo.png'
-import { LogoHeader, NavMenu } from './styles'
-import Button from '../Button'
+import { LogoHeader, NavMenu, ButtonMenu } from './styles'
+
 
 class Header extends Component{
     render(){
+
+        const { handle } = this.props;
         return(
             <header>
                 <LogoHeader src={Logo} alt="logo" />
                 <NavMenu>
-                    <Button>Triwizard</Button>
-                    <Button>Discovery</Button>
+                    
+                    <ButtonMenu onClick={()=> handle('tribruxo')}>Triwizard</ButtonMenu>
+
+                    <ButtonMenu onClick={()=> handle('discovery')}>Discovery</ButtonMenu>
+                   
+                    
                 </NavMenu>
             </header>
         )
