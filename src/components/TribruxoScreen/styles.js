@@ -29,7 +29,7 @@ export const Container = styled.div`
         border-radius: 8px;
         width: 245px;
         height: 45px;
-        background-color: #00101e;
+        background-color: #01182c;
         border: 2px solid white;
         font-size: 1.8rem;
         color: #ebebeb;
