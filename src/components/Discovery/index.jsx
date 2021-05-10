@@ -16,7 +16,7 @@ class Discovery extends Component{
     
       getCharacters = () => {
         const { type, house } = this.state;
-        fetch(`http://hp-api.herokuapp.com/api/characters/${type}${house}`)
+        fetch(`https://hp-api.herokuapp.com/api/characters/${type}${house}`)
         .then((response) => response.json())
         .then((response) => this.setState({
           characters: response,
