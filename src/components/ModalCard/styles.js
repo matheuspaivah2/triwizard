@@ -166,7 +166,7 @@ export const Ances = styled.h5`
 export const Back = styled.button`
     width: 80px;
     padding:8px;
-    
+    cursor: pointer;
     color: black;
     border: none;
     border-radius: 8px;

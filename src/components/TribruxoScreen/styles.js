@@ -9,7 +9,7 @@ export const Container = styled.div`
      flex-direction: column;
 
     h3{
-    margin-top: 30px;
+    margin-top: 70px;
    
     }
     
@@ -33,7 +33,7 @@ export const Container = styled.div`
         border: 2px solid white;
         font-size: 1.8rem;
         color: #ebebeb;
-        margin-top: 40px;
+        margin-top: 10px;
         font-weight: bolder;
         text-transform: uppercase;
         cursor: pointer;
