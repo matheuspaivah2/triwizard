@@ -9,24 +9,24 @@ import ReactAudioPlayer from 'react-audio-player';
 class Header extends Component{
 
     state ={
-        audio: 'white'
+        audio: 'grey'
         
     }
 
     music = () =>{
         const { audio } = this.state;
         const theme = document.getElementById('song')
-        if ( audio === 'white'){
-            // this.setState({
-            //     audio: 'grey'
-            // })
+        if ( audio === 'grey'){
+            this.setState({
+                audio: 'white'
+            })
             
             theme.play();
         }
 
-        if ( audio === 'grey'){
+        if ( audio === 'white'){
             this.setState({
-                audio: 'white'
+                audio: 'grey'
             })
             theme.pause();
         }
@@ -39,7 +39,7 @@ class Header extends Component{
             <HeaderStyled>
                 <LogoHeader src={Logo} alt="logo" />
                 <ButtonMusic onClick={this.music} borderColor={this.state.audio}><FaItunesNote/></ButtonMusic>
-                <ReactAudioPlayer type="audio/mpeg" ref="audio_tag" id='song' src={Song} volume={0.5} onPLay={true} muted={false} loop={true} autoPlay={true}/>
+                <ReactAudioPlayer type="audio/mpeg" ref="audio_tag" id='song' src={Song} volume={0.5} onPaused={true} muted={false} loop={true} />
                 <NavMenu>
                     
                     <ButtonMenu onClick={()=> handle('tribruxo')}>Triwizard</ButtonMenu>
